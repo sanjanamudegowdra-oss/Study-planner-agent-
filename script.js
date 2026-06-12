@@ -1,1 +1,4 @@
-console.log("Study Planner Agent Loaded");
+<body>
+    <script src="script.js"></script>
+</body>
+
