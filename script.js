@@ -1,23 +1,21 @@
+<script>
 function performSearch() {
-    // 1. Get the value the user typed
-    let input = document.getElementById("searchInput").value.toLowerCase();
+    let input = document.getElementById("searchInput").value.toLowerCase().trim();
     let resultsDiv = document.getElementById("results");
-    
-    // 2. Clear any previous results
-    resultsDiv.innerHTML = "";
 
-    // 3. Define your list of topics/tasks
-    const studyTopics = ["Mathematics", "Physics", "Chemistry", "Assignments", "Exam Prep"];
+    const topics = ["mathematics", "physics", "chemistry", "biology", "computer"];
 
-    // 4. Search and show matching results
-    let filtered = studyTopics.filter(topic => topic.toLowerCase().includes(input));
-    
-    if (filtered.length > 0) {
-        filtered.forEach(item => {
-            resultsDiv.innerHTML += `<p>Found: ${item}</p>`;
-        });
+    if (input === "") {
+        resultsDiv.innerHTML = "Please type something";
+        return;
+    }
+
+    let found = topics.filter(t => t.includes(input));
+
+    if (found.length > 0) {
+        resultsDiv.innerHTML = "Results: " + found.join(", ");
     } else {
-        resultsDiv.innerHTML = "<p>No results found.</p>";
+        resultsDiv.innerHTML = "No results found";
     }
 }
-
+</script>
