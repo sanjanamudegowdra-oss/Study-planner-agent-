@@ -1,19 +1,51 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Study Planner Fix</title>
+  <title>Study Planner</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    input { padding: 10px; width: 250px; }
+    button { padding: 10px; }
+    #results { margin-top: 20px; }
+  </style>
 </head>
+
 <body>
 
-<h1>📚 Study Planner Working</h1>
+<h1>📚 Study Planner Agent</h1>
 
-<input placeholder="Add task">
-<button>Add</button>
+<!-- SEARCH INPUT (IMPORTANT ID) -->
+<input type="text" id="searchInput" placeholder="Search topics...">
 
-<ul>
-  <li>Sample Task 1</li>
-  <li>Sample Task 2</li>
-</ul>
+<!-- BUTTON -->
+<button onclick="performSearch()">Search</button>
+
+<!-- RESULTS AREA (MISSING IN YOUR PROJECT) -->
+<div id="results"></div>
+
+<script>
+function performSearch() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let resultsDiv = document.getElementById("results");
+
+    resultsDiv.innerHTML = "";
+
+    const studyTopics = ["Mathematics", "Physics", "Chemistry", "Assignments", "Exam Prep"];
+
+    let filtered = studyTopics.filter(topic =>
+        topic.toLowerCase().includes(input)
+    );
+
+    if (filtered.length > 0) {
+        filtered.forEach(item => {
+            resultsDiv.innerHTML += `<p>Found: ${item}</p>`;
+        });
+    } else {
+        resultsDiv.innerHTML = "<p>No results found.</p>";
+    }
+}
+</script>
 
 </body>
 </html>
