@@ -1,51 +1,77 @@
-Study-planner-agent/
-│── index.html   ✅ (must be here)
-│── style.css
-│── script.js
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Study Planner</title>
-  <style>
-    body { font-family: Arial; text-align: center; margin-top: 50px; }
-    input { padding: 10px; width: 250px; }
-    button { padding: 10px; }
-    #results { margin-top: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner Agent</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #results {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>📚 Study Planner Agent</h1>
+<header>
+    <h1>Study Planner Agent</h1>
+</header>
 
-<!-- SEARCH INPUT (IMPORTANT ID) -->
-<input type="text" id="searchInput" placeholder="Search topics...">
+<div class="container">
 
-<!-- BUTTON -->
-<button onclick="performSearch()">Search</button>
+    <input type="text" id="searchInput" placeholder="Search topics...">
+    <button onclick="performSearch()">Search</button>
 
-<!-- RESULTS AREA (MISSING IN YOUR PROJECT) -->
-<div id="results"></div>
+    <div id="results"></div>
+
+</div>
 
 <script>
 function performSearch() {
     let input = document.getElementById("searchInput").value.toLowerCase();
     let resultsDiv = document.getElementById("results");
 
-    resultsDiv.innerHTML = "";
+    const topics = ["mathematics", "physics", "chemistry", "biology", "computer"];
 
-    const studyTopics = ["Mathematics", "Physics", "Chemistry", "Assignments", "Exam Prep"];
+    let found = topics.filter(t => t.includes(input));
 
-    let filtered = studyTopics.filter(topic =>
-        topic.toLowerCase().includes(input)
-    );
-
-    if (filtered.length > 0) {
-        filtered.forEach(item => {
-            resultsDiv.innerHTML += `<p>Found: ${item}</p>`;
-        });
+    if (found.length > 0) {
+        resultsDiv.innerHTML = "Found: " + found.join(", ");
     } else {
-        resultsDiv.innerHTML = "<p>No results found.</p>";
+        resultsDiv.innerHTML = "No results found";
     }
 }
 </script>
