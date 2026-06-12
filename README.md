@@ -19,6 +19,6 @@ Study Planner Agent is an AI-powered educational assistant designed to help stud
 • Performance analysis
 
 #AUTHOR:
-Uma Mudegowdra
+Sanjana M S
 
 
