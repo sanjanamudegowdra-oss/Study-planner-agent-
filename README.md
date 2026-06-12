@@ -1,24 +1,41 @@
-AGENT NAME:
-Study Planner Agent
+# Study Planner Agent
 
-#DESCRIPTION:
-Study Planner Agent is an AI-powered educational assistant designed to help students organize their academic activities efficiently. It creates personalized study schedules, tracks assignments, generates revision plans, and provides exam preparation strategies. The agent improves productivity, time management, and academic performance through intelligent planning and reminders.
+## Description
+Study Planner Agent is an AI-powered educational assistant that helps students organize their academic activities efficiently. It creates personalized study schedules, tracks assignments, generates revision plans, and provides exam preparation strategies.
 
-#FEATURES:
-• Personalized daily study timetable
-• Weekly study planning
-• Assignment tracking and reminders
-• Exam preparation schedules
-• Subject-wise study recommendations
-• Progress monitoring
-• Revision planning
-• Time management assistance
-• Goal setting and tracking
-• Productivity and motivation tips
-• Priority-based task scheduling
-• Performance analysis
+## Features
+- Personalized Study Timetable
+- Weekly Study Planning
+- Assignment Tracking
+- Reminder Notifications
+- Exam Preparation Scheduling
+- Revision Planning
+- Goal Setting
+- Progress Monitoring
+- Time Management Assistance
+- Productivity Analysis
 
-#AUTHOR:
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- Artificial Intelligence Concepts
+
+## Project Structure
+Study-planner-agent/
+├── README.md
+├── index.html
+├── style.css
+├── script.js
+├── assets/
+│   └── images/
+└── docs/
+
+## Future Enhancements
+- Voice Assistant
+- Mobile Application
+- Cloud Data Storage
+- AI Chatbot Integration
+
+## Author
 Sanjana M S
-
-
